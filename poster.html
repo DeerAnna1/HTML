@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>研究海报</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/2.1.3/marked.min.js"></script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #eef2f3;
+            color: #333;
+        }
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #d4f7fe;
+            color: black;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+        .content {
+            display: flex;
+            justify-content: space-between;
+        }
+        .part {
+            background: blue;
+        }
+        .column {
+            flex: 1;
+            padding: 20px;
+            margin: 10px;
+            border-radius: 8px;
+            background: #f9f9f9;
+            transition: background 0.3s;
+        }
+        .column:hover {
+            background: #f1f1f1;
+        }
+        h2 {
+            font-size: 20px;
+            margin-top: 20px;
+            color: white;
+        }
+        p {
+            line-height: 1.6;
+            margin: 10px 0;
+        }
+        .footer {
+            text-align: center;
+            margin-top: 20px;
+            font-size: 14px;
+            color: #666;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        body {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+        }
+        .editor {
+            border: 1px solid #ccc; /* 添加边框以便于视觉区分 */
+            padding: 10px; /* 添加内边距 */
+            min-height: 300px; /* 设置最小高度 */
+            width: 530px; /* 设置宽度 */
+            white-space: pre-wrap; /* 保持空格和换行 */
+            overflow-wrap: break-word; /* 允许长单词换行 */
+        }
+        .button {
+            margin-top: 5px; /* 按钮与文本框之间的间距 */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>A Multiscale Attention Network for Remote Sensing Scene Images Classification</h1>
+            <h4>Guokai Zhang, School of Optical-Electrical and Computer Engineering, University of Shanghai for Science and Technology, Shanghai 200093,China, zhangguokai_01@163.com |Weizhe Xu, School of Computer Science, University of Manchester,M13 9PL Manchester, U.K.,weizhe.xu@postgrad.manchester.ac.uk |Wei Zhao, School of Software Engineering, Tongji University,Shanghai 200092, China, zhaoweilh@tongji.edu.cn |Chenxi Huang, School of Informatics, Xiamen University, Xiamen 361005, China, supermonkeyxi@xmu.edu.cn|Eddi...</h4>
+        </div>
+
+        <div class="content">
+            <div class="column">
+                <div class="part">
+                    <h2>研究背景</h2>
+                </div>
+                <div>
+                    <div class="editor" contenteditable="true" placeholder="请输入 Markdown 文本..."></div>
+                    <button class="convertButton">转换</button>
+                </div>
+                <div class="part">
+                    <h2>研究方法</h2>
+                </div>
+                <div>
+                    <div class="editor" contenteditable="true" placeholder="请输入 Markdown 文本..."></div>
+                    <button class="convertButton">转换</button>
+                </div>
+                <div class="part">
+                    <h2>实验设计</h2>
+                </div>
+                <p>1. 数据集: 实验中使用了多个公开数据集，包括 UC Merced 数据集...</p>
+                <p>2. 实验过程: 使用 Tensorflow 框架进行实验，主要使用 ResNet...</p>
+            </div>
+
+            <div class="column">
+                <div class="part">
+                    <h2>结果与分析</h2>
+                </div>
+                <p>1. 不同网络的性能: 在 UC Merced 数据集上，模型的准确率达到...</p>
+                <p>2. 不同模型的比较: CA 模块和 PA 模块的效果明显优于其他模型...</p>
+                <div class="part">
+                    <h2>总体结论</h2>
+                </div>
+                <p>本文提出了一个基于 ResNet 的多尺度注意力网络 (MSA-Network)...</p>
+            </div>
+        </div>
+    </div>
+    <script>
+        const editors = document.getElementsByClassName('editor');
+        const convertButtons = document.getElementsByClassName('convertButton');
+
+        // 为每个转换按钮添加事件监听
+        for (let i = 0; i < convertButtons.length; i++) {
+            convertButtons[i].addEventListener('click', () => {
+                const markdownText = editors[i].innerText.trim();
+
+                // 如果输入内容不为空，则进行转换
+                if (markdownText) {
+                    const htmlContent = marked(markdownText);
+                    editors[i].innerHTML = htmlContent; // 更新编辑器内容
+                }
+            });
+        }
+    </script>
+</body>
+</html>
